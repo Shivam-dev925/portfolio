@@ -1,38 +1,528 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+body {
+  font-size: 16px;
+  background-color: #060606;
+  font-family: "Merriweather", serif;
+  color: white;
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+}
+
+li,
+ul {
+  list-style-type: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+.Navbar {
+  font-weight: 600;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+  backdrop-filter: blur(50px);
+}
+
+.Navbar__Right > ul {
+  display: flex;
+  align-items: center !important;
+}
+
+.Navbar__Brand {
+  cursor: pointer;
+  font-size: 1.4rem;
+  user-select: none;
+  font-weight: 600;
+}
+.Navbar__Right > ul > li,
+.Navbar__Right > ul > li > a {
+  font-weight: 600;
+  font-size: 1.4rem;
+  transition: all 0.2s linear;
+  padding: 0.3rem 1rem;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.Navbar__Right > ul > li:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero {
+  height: calc(100vh - 67px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: 5.8rem;
+  font-weight: 700;
+}
+
+.hero__image {
+  width: 120%;
+
+  object-fit: cover;
+}
+
+.para {
+  color: rgb(155, 151, 151);
+}
+
+.projects__image {
+  width: 100%;
+  min-width: 300px;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 2.8px 2.2px hsl(0deg 0% 83% / 2%),
+    0 6.7px 5.3px hsl(0deg 0% 83% / 3%), 0 12.5px 10px hsl(0deg 0% 83% / 4%),
+    0 22.3px 17.9px hsl(0deg 0% 83% / 4%), 0 41.8px 33.4px hsl(0deg 0% 83% / 5%),
+    0 100px 80px hsl(0deg 0% 83% / 7%);
+}
+.Projects__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: start;
+  padding: 3rem;
+}
+.Projects__right > h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.Projects__right > p {
+  font-size: 0.86rem;
+  line-height: 20px;
+  color: rgb(168, 167, 167);
+}
+.Projects__right > div > button {
+  color: black;
+  font-weight: 800;
+  padding: 0.4rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.footer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 2rem;
+  margin-block: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(60, 60, 156);
+  border-radius: 2rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(41, 41, 122);
+}
+
+.Loader {
+  height: 100vh;
+}
+
+.Loader > h3 {
+  font-size: 3rem;
+  font-family: "Merriweather", serif;
+}
+
+.Loader > .dynamic__text {
+  color: rgb(114, 167, 114);
+
+  transform: translate(3%);
+  position: relative;
+}
+.Loader > .dynamic__text::after {
+  content: "";
+  position: absolute;
+  top: -18%;
+  left: 0%;
+  background: black;
+  border-left: 1px solid rgb(114, 167, 114);
+  width: 102%;
+  height: 80px;
+  animation: typing 5s steps(16) infinite;
+}
+
+@keyframes typing {
+  0% {
+    left: 0%;
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    left: calc(100% + 10%);
   }
+  100% {
+    left: 0%;
+  }
+}
+
+.AboutPage {
+  height: 100vh;
+}
+
+.aboutSection {
+  height: 100vh;
+  background-image: url("E:/personel/public/images/idea.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: contain;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.Description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  flex-direction: column;
+  text-align: start;
+  padding: 1rem;
+}
+
+.Description p {
+  color: rgb(17, 17, 17);
+  font-weight: 500;
+}
+.Description > p::first-letter {
+  color: rgb(155, 113, 36);
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.1rem;
+}
+.Description > button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: rgb(192, 78, 78);
+  transition: all 0.2s linear;
+  margin-top: 2rem;
+}
+.Description > button:hover {
+  background-color: rgb(192, 60, 60);
+  transition: all 0.2s linear;
+}
+
+/* more about self components */
+
+.section1,
+.section2 {
+  height: 500px;
+  display: flex;
+
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.sec1-descript > p {
+  padding: 1rem;
+  color: rgb(46, 43, 43);
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+#p::first-letter {
+  color: rgb(155, 113, 36);
+  font-size: 2rem;
+  margin-right: 0.2rem;
+}
+.Section1-para {
+  color: rgb(236, 216, 216);
+  font-size: 1.15rem;
+}
+.Section1-para::first-letter {
+  color: rgb(150, 150, 235);
+  font-size: 2rem;
+  margin-right: 0.2rem;
+}
+
+.section1 > .absolte {
+  position: absolute;
+  width: 40%;
+  min-width: 400px;
+  height: 78%;
+  min-height: 450px;
+  background-image: url("E:/personel/public/images/self.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  top: 38%;
+  left: 6%;
+  z-index: 2;
+}
+.section1 > .absolte:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(223, 223, 75, 0.5);
+}
+
+.details {
+  height: 100vh;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 300px 400px 300px 500px;
+  width: 90%;
+  grid-template-areas:
+    "header1 header1 header1 header1"
+    " p1 p1 p2 p2"
+    "Header2 Header2 Header2 Header2"
+    "bottom bottom bottom bottom";
+}
+.header1 {
+  grid-area: header1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  color: #c4c4c4;
+  margin-top: 20px;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+.header2 {
+  grid-area: Header2;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  color: #c4c4c4;
+  margin-top: 100px;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+.left {
+  grid-area: p1;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "head1 profl "
+    "head2 icn "
+    "head3 socl "
+    "head4  mail ";
+}
+
+.left > .social_icons {
+  grid-area: icn;
+}
+.left > .my_skills {
+  grid-area: socl;
+}
+
+.left > .gmail {
+  grid-area: mail;
+  color: #aa9159;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+.left > .gmail:hover,
+.left > .social_icons > a > .brand_icons:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.left > p {
+  grid-area: profl;
+  color: #c4c4c4;
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+.social_icons > a > .brand_icons {
+  opacity: 0.8;
+  margin-left: 10px;
+  transition: color 0.5s ease 0s;
+  color: #aa9159;
+}
+.left > .pro {
+  grid-area: head1;
+}
+.left > .socpro {
+  grid-area: head2;
+}
+.left > .skl {
+  grid-area: head3;
+}
+.left > .contct {
+  grid-area: head4;
+}
+
+.social_icons {
+  position: relative;
+}
+.left > .left_head {
+  color: white;
+  font-weight: 100;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  letter-spacing: 3px;
+  margin-left: 20px;
+}
+.my_skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.my_skills > .graph {
+  width: 90%;
+  position: relative;
+  height: 15px;
+  background-color: #c4c4c4;
+  border-radius: 5px;
+  text-align: end;
+  cursor: pointer;
+  margin-bottom: 15px;
+  color: #aa9159;
+}
+.Html:after {
+  position: absolute;
+  content: "HTML";
+  width: 85%;
+  height: 22px;
+  top: -3px;
+  left: 0px;
+  background-color: rgb(56, 55, 55);
+  border: none;
+  border-radius: 5px;
+  text-align: start;
+  transition: all 0.5s linear;
+}
+.Html:hover:after {
+  transition: all 0.5s linear;
+  width: 0px;
+}
+.Javascript:hover:after {
+  transition: all 0.5s linear;
+  width: 0px;
+}
+.css:hover:after {
+  transition: all 0.5s linear;
+  width: 0px;
+}
+.React:hover:after {
+  transition: all 0.5s linear;
+  width: 0px;
+}
+.Tailwind:hover:after {
+  transition: all 0.5s linear;
+  width: 0px;
+}
+.Javascript::after {
+  position: absolute;
+  content: "JAVASCRIPT";
+  width: 70%;
+  height: 22px;
+  top: -3px;
+  left: 0px;
+  background-color: rgb(56, 55, 55);
+  border: none;
+  border-radius: 5px;
+  text-align: start;
+  transition: all 0.5s linear;
+}
+.css:after {
+  position: absolute;
+  content: "CSS";
+  width: 70%;
+  height: 22px;
+  top: -3px;
+  left: 0px;
+  background-color: rgb(56, 55, 55);
+  border: none;
+  border-radius: 5px;
+  text-align: start;
+  transition: all 0.5s linear;
+}
+.React:after {
+  position: absolute;
+  content: "REACT";
+  width: 65%;
+  height: 22px;
+  top: -3px;
+  left: 0px;
+
+  transition: all 0.5s linear;
+  background-color: rgb(56, 55, 55);
+  border: none;
+  border-radius: 5px;
+  text-align: start;
+}
+
+.Tailwind:after {
+  position: absolute;
+  content: "TAILWIND";
+  width: 20%;
+  height: 22px;
+  top: -3px;
+
+  transition: all 0.5s linear;
+  left: 0px;
+  background-color: rgb(56, 55, 55);
+  border: none;
+  border-radius: 5px;
+  text-align: start;
+}
+
+.right {
+  align-items: center;
+
+  grid-area: p2;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.right > p {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #7e8385;
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 100;
+  width: 75%;
+}
+.brand_icons {
+  margin-left: 30px;
+  font-size: 1.4rem;
 }
