@@ -36,7 +36,7 @@ export default function Footer() {
         navigate('/');
     };
     return (
-        <div className="absolute bottom-4 inset-x-0 border-t border-white/10  px-4 py-4 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24 sm:hidden ">
+        <div className="absolute bottom-4 inset-x-0 border-t border-white/10  px-4 py-4 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24 sm:hidden bg-opacity-50 backdrop-filter backdrop-blur-sm">
             <div className="flex gap-x-6 md:order-2">
                 {navigation.map((item) => (
                     <a key={item.name} target="blank" href={item.href} className="text-gray-400 hover:text-gray-300">

@@ -15,7 +15,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="absolute inset-x-0 top-0 z-50 bg-opacity-50 backdrop-filter backdrop-blur-sm" style={{ zIndex: '50' }}>
+        <header className=" bg-opacity-50 backdrop-filter backdrop-blur-sm" style={{ zIndex: '50' }}>
             <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1 rounded-full">
 
@@ -71,13 +71,13 @@ export default function Header() {
                         <div className="-my-6 divide-y divide-gray-500/25">
                             <div className="space-y-2 py-6">
                                 {navigation.map((item) => (
-                                    <a
+                                    <Link onClick={() => setMobileMenuOpen(false)}
                                         key={item.name}
                                         to={item.to}
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800"
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
 
